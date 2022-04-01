@@ -1,28 +1,20 @@
 import React from "react";
 
-import { Wrapper, Container, Logo, Nav, A, Contact } from "./styles";
+import { Wrapper, Container, Logo } from "./styles";
+
+import logoSvg from "../../Assets/logo.svg";
+import { useWindowSize } from "../../Hooks/useWindowSize";
+import NavMenuMobile from "../NavMenuMobile";
+import NavMenuDesktop from "../NavMenuDesktop";
 
 const Header = () => {
+  const windowSize = useWindowSize();
+
   return (
     <Wrapper>
-      <Container className="container">
-        <Logo>sunnyside</Logo>
-        <Nav>
-          <ul>
-            <li>
-              <A href="#">About</A>
-            </li>
-            <li>
-              <A href="#">Services</A>
-            </li>
-            <li>
-              <A href="#">Projects</A>
-            </li>
-            <li>
-              <Contact href="#">CONTACT</Contact>
-            </li>
-          </ul>
-        </Nav>
+      <Container>
+        <Logo src={logoSvg} />
+        {windowSize.width > 1080 ? <NavMenuDesktop /> : <NavMenuMobile />}
       </Container>
     </Wrapper>
   );

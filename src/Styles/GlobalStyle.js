@@ -5,9 +5,14 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Barlow, sans-serif;
+    font-family: "Barlow", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  html, body {
+    background-color: #FFFBF8;
+    scroll-behavior: smooth;
   }
 
   ul {
@@ -23,7 +28,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .container {
-    width: 95vw;
+    width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
   }
 `;
